@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'faker'
+
 gem 'devise'
 group :development, :test do
    gem 'rspec-rails', '~> 3.0'

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'pundit'
+
 gem 'devise'
 group :development, :test do
    gem 'rspec-rails', '~> 3.0'

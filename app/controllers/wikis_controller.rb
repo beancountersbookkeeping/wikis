@@ -1,6 +1,7 @@
 class WikisController < ApplicationController
+  include ApplicationHelper
   
-  before_action :require_sign_in, except: [:index, :show]
+  before_filter :authenticate_user!
   
   def index
     @wikis = Wiki.all
@@ -36,13 +37,7 @@ class WikisController < ApplicationController
      @wiki = Wiki.find(params[:id])
      @wiki.title = params[:wiki][:title]
      @wiki.body = params[:wiki][:body]
-     authorize @wiki
-     
-     if @wiki.update(wiki_params)
-       redirect_to @wiki
-     else
-      render :edit
-    end 
+    
  
      if @wiki.save
        flash[:notice] = "Wiki was updated."

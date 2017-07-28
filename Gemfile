@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
-gem 'faker'
-=======
 gem 'pundit'
->>>>>>> userroles
+gem 'faker'
+gem 'stripe'
+gem 'figaro', '1.0'
 
 gem 'devise'
 group :development, :test do

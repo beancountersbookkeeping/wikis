@@ -1,3 +1,5 @@
+<%= render partial: 'form', locals: { wiki: @wiki } %>
+
 <h1>All Wikis</h1>
      <%= link_to "New Wiki", new_wiki_path(@wiki), class: 'btn btn-success' %>
 <% @wikis.each do |wiki| %>
@@ -9,3 +11,4 @@
      </div>
    </div>
  <% end %>
+

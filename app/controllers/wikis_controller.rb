@@ -5,6 +5,13 @@ class WikisController < ApplicationController
   
   def index
     @wikis = Wiki.all
+    @wikis = Wiki.visible_to(current_user)
+
+    if current_user.premium? || current_user.admin? 
+      @wikis = Wiki.all
+    end
+    
+    
   end
 
   def show
@@ -58,5 +65,11 @@ class WikisController < ApplicationController
        flash.now[:alert] = "There was an error deleting the wiki."
        render :show
      end
+   end
+   
+    private
+ 
+   def wiki_params
+    params.require(:wiki).permit(:title, :body, :private)
    end
 end

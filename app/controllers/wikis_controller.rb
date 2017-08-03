@@ -5,12 +5,6 @@ class WikisController < ApplicationController
   
   def index
     @wikis = Wiki.all
-    @wikis = Wiki.visible_to(current_user)
-
-    if current_user.premium? || current_user.admin? 
-      @wikis = Wiki.all
-    end
-    
     
   end
 

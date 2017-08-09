@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   has_many :wikis
-  has_many :collaborator
-  has_many :collaborator, through: :collaborator
+  has_many :collaborated_wikis, through: :collaborators, source: :wiki
   
   after_initialize { self.role ||= :standard }
   

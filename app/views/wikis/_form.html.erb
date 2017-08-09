@@ -1,8 +1,8 @@
 <% if current_user.admin? || current_user.premium? %>
   <div class="form-group">
     <%= f.label :private, class: 'checkbox' do %>
-    <%= f.check_box :collaborator %> Collaborator
       <%= f.check_box :private %> Private wiki
+     <%= link_to "New Collaborator", new_collaborator_path(@collaborator), class: 'btn btn-success' %>
     <% end %>
   </div>
 <% end %>

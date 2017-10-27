@@ -9,17 +9,16 @@ include Faker
     )
   end
   users = User.all
-  
-# Create Wikis
+
+# Create tasks
   15.times do
-    Wiki.create!(
+    task.create!(
       title: Faker::Lorem.sentence,
-      body: Faker::Lorem.paragraph,
       private: false
     )
   end
-  wikis = Wiki.all
+  tasks = task.all
 
 puts "Seed finished"
 puts "#{User.count} users created."
-puts "#{Wiki.count} wikis created."
+puts "#{task.count} tasks created."

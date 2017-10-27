@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
 
- 
-
   devise_for :users
-  root 'wikis#index'
-  
-  resources :wikis
+  root 'tasks#index'
+
+  resources :tasks
   resources :users
-  
-  resources :charges, only: [:new, :create]
+
 end
